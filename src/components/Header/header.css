@@ -1,0 +1,40 @@
+.header {
+  padding: 16px 0;
+}
+.header__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 20px;
+}
+.header__nav {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  line-height: 1.4;
+  letter-spacing: 0%;
+}
+.header__nav ul {
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+}
+.header__nav a {
+  color: #191919
+}
+.header__auth .btn-registr {
+  width: 170px;
+  height: 48px;
+  padding: 13px 0;
+  border-radius: 12px;
+  background-color: var(--colorBlue);
+  color: #FFFFFF;
+}
+.header__auth{
+  display: flex;
+  column-gap: 26px;
+}
+.header ul{
+  gap: 24px;
+  list-style-type: none;
+}
