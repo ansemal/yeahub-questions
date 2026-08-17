@@ -1,8 +1,13 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
+import DOMPurify from 'dompurify';
 import '../questions.css';
 
 export default function Question({ question }) {
   const [showDetails, setShowDetails] = useState(false);
+
+  const cleanShortAnswer = useMemo(() => {
+    return DOMPurify.sanitize(question.shortAnswer);
+  }, [question.shortAnswer]);
 
   return (
     <div className="question">
@@ -22,8 +27,8 @@ export default function Question({ question }) {
               <p>{question.complexity}</p>
             </div>
           </div>
-          <div className="shortAnswer" dangerouslySetInnerHTML={{ __html: question.shortAnswer }} />
-          <button class="btn colorBlue">Подробнее</button>
+          <div className="shortAnswer" dangerouslySetInnerHTML={{ __html: cleanShortAnswer }} />
+          <button className='btn-more' disabled>Подробнее</button>
         </div>
       )}
     </div>

@@ -43,8 +43,54 @@
   user-select: none;
   cursor: pointer;
 }
-.filter__button:hover {
+.filter__button:hover,
+.filter__button[aria-pressed="true"] {
   border: 1px solid var(--colorBlue);
   background-color: var(--colorBlue);
   color: var(--colorWhite);
+}
+.filter__expand {
+  color: var(--colorBlue);
+}
+
+.filter__button:focus-visible,
+.filters__mbl-close:focus-visible {
+  outline: 2px solid #0056b3; /* Цвет линии фокуса */
+  outline-offset: -2px;       /* Отступ линии от края кнопки */
+}
+.filter__button:focus-visible {
+  border-radius: 12px;
+}
+.filters__mbl-close:focus-visible {
+  border-radius: 50%;
+}
+.filters__button-mbl {
+  display: none;
+}
+.filters__button-mbl img{
+  width: 80%;
+}
+.filters__mbl-close {
+  display: none;
+  width: fit-content;
+}
+
+@media (max-width: 767px) {
+  .filters__button-mbl {
+    display: block;
+  }
+  .filters.filters-mobile {
+    display: none;
+    position: absolute;
+    max-width: 90%;
+    left: 5%;
+  }
+  .filters-mobile.isOpen {
+    display: flex;
+  }
+  .filters__mbl-close {
+    display: block;
+    align-self: end;
+    margin-bottom: 10px;
+  }
 }

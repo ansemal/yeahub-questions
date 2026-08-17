@@ -1,7 +1,9 @@
 .question {
   padding: 20px 0;
 }
-.questions__theme {
+.questions__spec {
+  display: flex;
+  justify-content: space-between;
   font-size: 24px;
   margin-bottom: 16px;
 }
@@ -53,4 +55,12 @@
 }
 .question__details button {
   align-self: flex-end;
+  color: var(--colorBlue);
+}
+
+
+/* временно, пока в разработке */
+.btn-more:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
